@@ -20,7 +20,6 @@ const tryToGuess = () => {
         //проверка что введено число и там где я запутался с !!
         attempts--;
         alert("Введите число!");
-
         Game();
       }
       if (answer > target) {
@@ -47,7 +46,7 @@ const tryToGuess = () => {
         } else {
           //А тут в другом случае если отказ
           alert("Прощай!");
-          break;
+          return;
         }
       }
     }
