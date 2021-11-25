@@ -27,18 +27,21 @@ const tryToGuess = () => {
         attempts--;
         alert("Введите число!");
         Game();
+        return;
       }
       if (answer > target) {
         //Если число больше то выводим сообщение и убавляем попытки
         attempts--;
         alert(`Загаданное число меньше, осталось ${attempts} попыток`);
         Game();
+        return;
       }
       if (answer < target) {
         //Если число меньше то выводим сообщение и убавляем попытки
         attempts--;
         alert(`Загаданное число больше, осталось ${attempts} попыток`);
         Game();
+        return;
       }
       if (answer == target) {
         //Если число равно о выводим сообщение и предлагаем сыграть снова
@@ -49,6 +52,7 @@ const tryToGuess = () => {
           randomNumber(); // снова загадываем число вызвав функцию
           attempts = 10;
           Game(); // и снова вызываю функцию игры
+          return;
         } else {
           //А тут в другом случае если отказ
           alert("Прощай!");
@@ -68,7 +72,7 @@ const tryToGuess = () => {
         return;
       } else {
         alert("Прощай!");
-        attempts = 0;
+        // attempts = 0;
         return;
       }
     }
