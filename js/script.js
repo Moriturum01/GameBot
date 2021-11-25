@@ -16,13 +16,13 @@ const tryToGuess = () => {
       const answer = prompt(
         `Отгадайте число от 1 до 100 у вас ${attempts} попыток`
       ); //спрашиваем пользователя  число
-      if (answer === null) {
+      if (answer.trim() === null) {
         alert("Прощай!");
         attempts = 0;
         return;
       }
 
-      if (answer === "" || isNaN(answer)) {
+      if (answer.trim() === "" || isNaN(answer)) {
         //проверка что введено число и там где я запутался с !!
         attempts--;
         alert("Введите число!");
