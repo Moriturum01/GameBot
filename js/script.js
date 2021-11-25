@@ -16,7 +16,13 @@ const tryToGuess = () => {
       const answer = prompt(
         `Отгадайте число от 1 до 100 у вас ${attempts} попыток`
       ); //спрашиваем пользователя  число
-      if (answer === null || answer === "" || isNaN(answer)) {
+      if (answer === null) {
+        alert("Прощай!");
+        attempts = 0;
+        return;
+      }
+
+      if (answer === "" || isNaN(answer)) {
         //проверка что введено число и там где я запутался с !!
         attempts--;
         alert("Введите число!");
@@ -46,6 +52,7 @@ const tryToGuess = () => {
         } else {
           //А тут в другом случае если отказ
           alert("Прощай!");
+          attempts = 0;
           return;
         }
       }
@@ -58,8 +65,11 @@ const tryToGuess = () => {
         randomNumber();
         attempts = 10;
         Game();
+        return;
       } else {
         alert("Прощай!");
+        attempts = 0;
+        return;
       }
     }
   };
